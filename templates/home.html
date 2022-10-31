@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Translate DNA to Protein Type</title>
+	<h1> Translate DNA to Protein Type </h1>
+</head>
+<body>
+	<form method = "post" action = "{{url_for('translate')}}" id = "translate-form">
+		<input type = "text" name = "translate-input-name" id = "translate-input">
+		<input type = "submit">
+	</form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <p style = "width:50%;">{{ message }}</p>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+
+
+</body>
+</html>
